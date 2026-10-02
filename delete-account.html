@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Delete Your Stryde Account</title>
+<style>
+  :root {
+    --maroon: #7a1f17;
+    --maroon-dark: #591d17;
+    --ink: #1c1c1c;
+    --muted: #5a5a5a;
+    --line: #e4e0dd;
+    --bg: #fdfbfa;
+    --card: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px 80px; }
+
+  header.hero {
+    border-bottom: 1px solid var(--line);
+    padding: 48px 0 32px;
+    margin-bottom: 40px;
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-weight: 800; font-size: 20px; color: var(--maroon-dark);
+    letter-spacing: -0.01em;
+  }
+  .brand .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--maroon); }
+  h1 { font-size: 28px; margin: 18px 0 8px; letter-spacing: -0.01em; }
+  .lede { font-size: 15.5px; color: #333; margin-top: 18px; max-width: 62ch; }
+
+  section { margin-bottom: 36px; }
+  h2 { font-size: 18px; margin: 0 0 14px; }
+  p { margin: 0 0 14px; font-size: 15px; color: #2a2a2a; }
+  ul { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 8px; font-size: 15px; color: #2a2a2a; }
+  strong { color: var(--ink); }
+
+  .steps {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 24px 28px;
+  }
+  .steps ol { margin: 0; padding-left: 22px; }
+  .steps li { margin-bottom: 14px; font-size: 15px; }
+  .steps li:last-child { margin-bottom: 0; }
+
+  table { width: 100%; border-collapse: collapse; margin: 8px 0 0; font-size: 13.8px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
+  tr:last-child td { border-bottom: none; }
+
+  .contact-card {
+    background: var(--maroon-dark); color: #fff; border-radius: 14px;
+    padding: 28px 28px; text-align: center;
+  }
+  .contact-card p { color: #f1d9d4; margin-bottom: 6px; }
+  .contact-card a { color: #fff; font-weight: 700; font-size: 17px; text-decoration: none; }
+  .contact-card a:hover { text-decoration: underline; }
+
+  footer { text-align: center; color: var(--muted); font-size: 12.5px; padding-top: 24px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <span class="brand"><span class="dot"></span>Stryde</span>
+    <h1>Delete Your Account</h1>
+    <p class="lede">You can request deletion of your Stryde account and all associated data at any time. Here's exactly how, and what happens to your data when you do.</p>
+  </header>
+
+  <section>
+    <h2>How to request deletion</h2>
+    <div class="steps">
+      <ol>
+        <li>Send an email to <strong>saseesdk@gmail.com</strong> from the email address your Stryde account is registered with.</li>
+        <li>Use the subject line <strong>"Delete my Stryde account"</strong>, and include your in-app username so we can find your account quickly.</li>
+        <li>We'll confirm your identity and process the deletion. Your account and all associated data are permanently removed — this cannot be undone.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <h2>What gets deleted</h2>
+    <table>
+      <tr><th>Data</th><th>Deleted?</th></tr>
+      <tr><td>Profile (email, username, avatar)</td><td>Deleted</td></tr>
+      <tr><td>Daily step history</td><td>Deleted</td></tr>
+      <tr><td>Coins, XP, level, streaks</td><td>Deleted</td></tr>
+      <tr><td>Team memberships</td><td>Deleted</td></tr>
+      <tr><td>Claimed map territory</td><td>Deleted</td></tr>
+      <tr><td>Run history and GPS routes</td><td>Deleted</td></tr>
+    </table>
+    <p style="margin-top:14px;">Nothing is retained after deletion — there is no additional retention period. Deletion cascades through every record tied to your account.</p>
+  </section>
+
+  <section>
+    <h2>Partial data deletion</h2>
+    <p>Stryde does not currently offer deletion of individual data types without deleting the whole account — requesting deletion removes everything listed above together.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-card">
+      <p>Account deletion requests</p>
+      <a href="mailto:saseesdk@gmail.com?subject=Delete my Stryde account">saseesdk@gmail.com</a>
+    </div>
+  </section>
+
+  <footer>&copy; 2026 Stryde. All rights reserved.</footer>
+</div>
+</body>
+</html>
