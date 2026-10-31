@@ -1,29 +1,119 @@
 <!doctype html>
 <html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Stryde · Bueno Works</title>
-<meta name="description" content="Stryde: close a running loop and the land inside it is yours. Coins, avatars, teams and leaderboards. Coming soon.">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Stryde · Run a loop, own the land inside it</title>
+<meta name="description" content="Stryde turns your runs into territory. Close a loop and the streets inside are yours, until someone takes them back. Coming soon.">
+<meta name="theme-color" content="#0a0d12">
+<meta property="og:title" content="Stryde · Run a loop, own the land inside it">
+<meta property="og:description" content="Close a loop on a run and the land inside it is yours. Coins, avatars, rivals, 3D replays. Coming soon.">
+<meta property="og:image" content="https://stryde.buenoworks.app/media/claim.jpg">
+<meta property="og:url" content="https://stryde.buenoworks.app/">
+<link rel="icon" href="/logo.png">
+<link rel="preload" href="/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/style.css">
-</head><body><div class="wrap">
-<header class="top"><a class="wordmark" href="/">Stryde <span style="font-weight:500;color:var(--muted);font-size:14px">by Bueno Works</span></a><nav><a href="/privacy/">Privacy</a><a href="mailto:support@buenoworks.app">Support</a></nav></header>
-<div class="hero">
-  <div class="app"><img src="/logo.png" alt="Stryde app icon"><div><h1 style="margin:0">Stryde</h1><p>Run it. Own it. <span class="pill">Coming soon</span></p></div></div>
-</div>
-<section>
-  <h2>What it is</h2>
-  <ul>
-    <li><b>Claim your city.</b> Close a loop on a run and the land inside it is yours. Someone else can take it back.</li>
-    <li><b>Collect coins</b> for every kilometre and every closed loop, and spend them on runner avatars.</li>
-    <li><b>Climb the ranks</b> on city, team and everyone leaderboards.</li>
-    <li><b>Replay every run in 3D</b> and share it as a video.</li>
-    <li><b>Privacy first.</b> The community map shows where people run, not who. The first and last 200 m of every run are cut off, and you can switch your runs off.</li>
-  </ul>
+<script>document.documentElement.classList.add('js')</script>
+</head><body>
+
+<header class="bar">
+  <a class="brand" href="/"><img src="/logo.png" alt="">Stryde</a>
+  <nav><a href="#how">How it works</a><a href="/privacy/">Privacy</a></nav>
+</header>
+
+<main>
+<section class="hero" aria-labelledby="h1">
+  <div class="map" id="map" role="img" aria-label="A dark city map. Draw a closed loop with your finger or mouse and the land inside it turns lime: that's how you claim territory in Stryde."><canvas></canvas></div>
+  <p class="hint" id="hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V11m0-1.5a1.5 1.5 0 0 1 3 0V11m0-.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-1a6 6 0 0 1-5-2.7L3.6 14a1.5 1.5 0 0 1 2.4-1.8L9 15"/></svg>Draw a loop on the map</p>
+  <div class="toast" id="toast" aria-live="polite"></div>
+  <div class="pitch">
+    <h1 id="h1">Run a loop.<br><em>Own the land</em> inside it.</h1>
+    <p class="lede">Stryde turns your runs into territory. Close a loop and the streets inside are yours, until someone takes them back.</p>
+    <form class="join" data-source="stryde-hero" novalidate>
+      <label class="sr-only" for="email1">Email address</label>
+      <input id="email1" type="email" name="email" placeholder="you@email.com" autocomplete="email" required>
+      <input class="trap" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button type="submit">Get early access</button>
+    </form>
+    <p class="join-note" aria-live="polite">Free. One email when Stryde launches, nothing else.</p>
+  </div>
 </section>
-<section class="links">
-  <h2>Help and legal</h2>
-  <a href="/privacy/">Privacy policy</a>
-  <a href="/delete-account/">Delete your account</a>
-  <a href="mailto:support@buenoworks.app">support@buenoworks.app</a>
+
+<section class="story" id="how">
+  <div class="reveal">
+    <h2>Claim it. Lose it.<br>Take it back.</h2>
+    <p class="big">Every closed loop paints your colour onto the map. Other runners can cut through it and take a piece. So you lace up and take it back, bigger.</p>
+  </div>
+  <div class="duo reveal">
+    <figure><div class="clip"><video src="/media/claim.mp4" poster="/media/claim.jpg" muted loop playsinline preload="none" aria-label="A runner closes a loop and the blocks inside turn lime"></video></div><figcaption><b>Close a loop.</b> The land is yours.</figcaption></figure>
+    <figure><div class="clip"><video src="/media/retake.mp4" poster="/media/retake.jpg" muted loop playsinline preload="none" aria-label="A rival takes part of the land and the runner takes it back with a bigger loop"></video></div><figcaption><b>Someone cuts in.</b> Run it back.</figcaption></figure>
+  </div>
 </section>
-<footer>© 2026 Bueno Works</footer>
-</div></body></html>
+
+<section class="story">
+  <div class="split">
+    <div class="reveal">
+      <h2>Kilometres turn into coins.</h2>
+      <p class="big">Coins for every kilometre and every closed loop. Spend them on new runner looks. No cash, no pay-to-win: just your legs.</p>
+      <ul class="prices" aria-label="Runner avatars and their prices">
+        <li><span class="coin" aria-hidden="true"></span>Trail · 250</li>
+        <li><span class="coin" aria-hidden="true"></span>Marathon · 275</li>
+        <li><span class="coin" aria-hidden="true"></span>Night · 450</li>
+      </ul>
+    </div>
+    <div class="clip reveal"><video src="/media/avatars.mp4" poster="/media/avatars.jpg" muted loop playsinline preload="none" aria-label="A new runner look snaps together piece by piece"></video></div>
+  </div>
+</section>
+
+<section class="story wide">
+  <div class="reveal">
+    <h2>Every run, replayed in 3D.</h2>
+    <p class="big">Finish a run and watch it again from above: your route rising through the streets. Save it as a video and send it to your crew.</p>
+  </div>
+  <div class="clip reveal"><video src="/media/replay.mp4" poster="/media/replay.jpg" muted loop playsinline preload="none" aria-label="A run replayed as a 3D landscape with the runner retracing the route"></video></div>
+</section>
+
+<section class="story">
+  <div class="split flip">
+    <div class="reveal">
+      <h2>Your map, not your address.</h2>
+      <ul class="facts">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4m10 0h4M7 12l3-3m-3 3 3 3m7-3-3-3m3 3-3 3"/></svg><span><b>The first and last 200 m</b> of every run are cut off the community map, so nobody sees where you start or finish.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6M3 3l18 18"/></svg><span><b>No names, no profiles</b> on the community map. It shows where people run, not who.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="10" rx="5"/><circle cx="8" cy="12" r="3"/></svg><span><b>One switch</b> hides your land and your runs from everyone.</span></li>
+      </ul>
+      <p class="big" style="font-size:15.5px">Read exactly what we collect in the <a href="/privacy/">privacy policy</a>.</p>
+    </div>
+    <svg class="diagram reveal" viewBox="0 0 400 400" role="img" aria-label="A run that starts and ends at a house. The 200 metres nearest the house at both ends are hidden; only the middle of the run appears on the map.">
+      <defs><pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0v40" fill="none" stroke="#1d2631" stroke-width="1"/></pattern></defs>
+      <rect width="400" height="400" rx="26" fill="#121821"/><rect width="400" height="400" rx="26" fill="url(#g)"/>
+      <path d="M118 300 C 70 270 60 190 96 140" fill="none" stroke="#4a5868" stroke-width="7" stroke-linecap="round" stroke-dasharray="2 14"/>
+      <path d="M96 140 C 140 70 280 60 320 130 C 360 200 330 290 250 312" fill="none" stroke="#b6ff3a" stroke-width="7" stroke-linecap="round"/>
+      <path d="M250 312 C 200 326 150 318 118 300" fill="none" stroke="#4a5868" stroke-width="7" stroke-linecap="round" stroke-dasharray="2 14"/>
+      <g transform="translate(104 296)"><path d="M0 14 18 0l18 14v20H0z" fill="#f2f5f8"/><rect x="13" y="22" width="10" height="12" fill="#121821"/></g>
+      <g font-family="Space Grotesk, sans-serif" font-size="15" font-weight="700"><text x="124" y="236" fill="#a3afbd">200 m hidden</text><text x="176" y="362" fill="#a3afbd">200 m hidden</text><text x="196" y="190" fill="#b6ff3a">On the map</text></g>
+    </svg>
+  </div>
+</section>
+
+<section class="story close" id="join">
+  <div class="reveal">
+    <h2>Your street is<br>up for grabs.</h2>
+    <form class="join" data-source="stryde-footer" novalidate>
+      <label class="sr-only" for="email2">Email address</label>
+      <input id="email2" type="email" name="email" placeholder="you@email.com" autocomplete="email" required>
+      <input class="trap" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button type="submit">Get early access</button>
+    </form>
+    <p class="join-note" aria-live="polite"></p>
+    <p class="soon">Stryde is coming soon. Made by <a href="https://buenoworks.app">Bueno Works</a>.</p>
+  </div>
+</section>
+</main>
+
+<footer class="site-foot">
+  <span>© 2026 Bueno Works</span>
+  <nav><a href="/privacy/">Privacy policy</a><a href="/delete-account/">Delete account</a><a href="mailto:support@buenoworks.app">support@buenoworks.app</a></nav>
+</footer>
+
+<script src="/config.js"></script>
+<script src="/app.js"></script>
+</body></html>
