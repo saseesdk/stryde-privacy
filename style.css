@@ -1,0 +1,41 @@
+:root {
+  --bg: #f7f8fb; --card: #ffffff; --ink: #14181d; --muted: #5b6673; --line: #e3e7ee;
+  --brand: #2160ff; --brand-ink: #ffffff; --accent: #b6ff3a; --accent-ink: #14200a;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0b0e13; --card: #141a22; --ink: #f2f5f8; --muted: #9aa6b5; --line: #26313d; --brand: #5b8bff; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); line-height: 1.65; }
+a { color: var(--brand); }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 20px 72px; }
+.top { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; gap: 12px; flex-wrap: wrap; }
+.wordmark { font-weight: 800; font-size: 19px; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; }
+.wordmark span { color: var(--brand); }
+.top nav a { margin-left: 18px; font-size: 14.5px; color: var(--muted); text-decoration: none; }
+.top nav a:hover { color: var(--ink); }
+.hero { padding: 36px 0 28px; border-bottom: 1px solid var(--line); margin-bottom: 36px; }
+.hero h1 { font-size: clamp(28px, 6vw, 40px); line-height: 1.15; margin: 0 0 12px; letter-spacing: -0.02em; }
+.hero p { font-size: 16.5px; color: var(--muted); margin: 0; max-width: 60ch; }
+.meta { font-size: 13.5px; color: var(--muted); margin-top: 10px; }
+section { margin-bottom: 34px; }
+h2 { font-size: 19px; margin: 0 0 12px; letter-spacing: -0.01em; }
+h3 { font-size: 16px; margin: 18px 0 8px; }
+p, li { font-size: 15.5px; }
+ul, ol { padding-left: 22px; }
+li { margin-bottom: 7px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px 24px; }
+.app { display: flex; gap: 18px; align-items: center; text-decoration: none; color: inherit; }
+.app img { width: 72px; height: 72px; border-radius: 18px; flex: none; }
+.app h3 { margin: 0 0 4px; font-size: 18px; }
+.app p { margin: 0; color: var(--muted); font-size: 15px; }
+.pill { display: inline-block; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 99px; background: var(--accent); color: var(--accent-ink); margin-left: 6px; vertical-align: 2px; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 10px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
+.note { border-left: 4px solid var(--brand); background: var(--card); padding: 14px 18px; border-radius: 0 12px 12px 0; }
+.links a { display: inline-block; margin: 0 14px 8px 0; }
+footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 13.5px; color: var(--muted); }
+footer a { color: var(--muted); }
