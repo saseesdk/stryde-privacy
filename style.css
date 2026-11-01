@@ -138,3 +138,11 @@ th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spa
 .links a { display: inline-block; margin: 0 14px 8px 0; }
 footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 13.5px; color: var(--muted); }
 footer a { color: var(--muted); }
+
+/* Google Play pre-register button */
+.play { display: inline-flex; align-items: center; gap: 12px; height: 58px; padding: 0 22px 0 18px; margin: 0 0 18px; border-radius: 14px; background: #f2f5f8; color: #0a0d12; text-decoration: none; font: 700 19px/1.05 var(--display); transition: transform 0.12s var(--ease-out), box-shadow 0.25s var(--ease-out); box-shadow: 0 0 0 0 rgba(182,255,58,0); }
+.play:hover { box-shadow: 0 0 0 4px rgba(182,255,58,0.35); }
+.play:active { transform: scale(0.97); }
+.play svg { width: 26px; height: 26px; color: #0a0d12; }
+.play small { display: block; font: 500 12px/1.2 var(--body); color: #3d4652; margin-bottom: 2px; }
+.close .play { margin: 26px auto 0; }
