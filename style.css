@@ -146,3 +146,9 @@ footer a { color: var(--muted); }
 .play svg { width: 26px; height: 26px; color: #0a0d12; }
 .play small { display: block; font: 500 12px/1.2 var(--body); color: #3d4652; margin-bottom: 2px; }
 .close .play { margin: 26px auto 0; }
+
+/* phone choice on the waitlist form */
+.join .os { display: flex; gap: 6px; border: 0; padding: 0; margin: 0; flex: 1 0 100%; order: -1; }
+.join .os label { display: inline-flex; align-items: center; gap: 7px; padding: 8px 14px; border-radius: 99px; background: rgba(18,24,33,.92); border: 1px solid #334050; font-size: 14.5px; color: #c9d2dc; cursor: pointer; }
+.join .os input { accent-color: var(--lime); margin: 0; }
+.join .os label:has(input:checked) { border-color: var(--lime); color: var(--ink); }

@@ -177,7 +177,7 @@
         const r = await fetch(`${WAITLIST.url}/rest/v1/waitlist`, {
           method: 'POST',
           headers: { apikey: WAITLIST.key, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
-          body: JSON.stringify({ email, app: 'stryde', source: form.dataset.source }),
+          body: JSON.stringify({ email, app: 'stryde', source: `${form.dataset.source}:${form.os?.value || 'unknown'}` }),
         });
         if (r.ok || r.status === 409) { note.className = 'join-note ok'; note.textContent = 'You’re on the list. We’ll email you once, when Stryde launches.'; form.reset(); btn.textContent = 'You’re in'; return; }
         throw new Error(String(r.status));
