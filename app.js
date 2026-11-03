@@ -1,4 +1,15 @@
 // stryde.buenoworks.app: interactive claim map, waitlist form, on-screen-only video playback, section reveals.
+
+// Instagram/Facebook in-app browsers ignore target=_blank and won't hand a play.google.com page to the Play app:
+// on Android an intent: link opens the Play Store directly, falling back to the web listing.
+if (/Android/i.test(navigator.userAgent)) {
+  for (const a of document.querySelectorAll('a[href^="https://play.google.com/store/apps/details"]')) {
+    const web = a.href, q = new URL(web).search.slice(1);
+    a.href = `intent://details?${q}#Intent;scheme=market;package=com.android.vending;S.browser_fallback_url=${encodeURIComponent(web)};end`;
+    a.removeAttribute('target');
+  }
+}
+
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
