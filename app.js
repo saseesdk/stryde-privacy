@@ -190,7 +190,7 @@ if (/Android/i.test(navigator.userAgent)) {
           headers: { apikey: WAITLIST.key, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
           body: JSON.stringify({ email, app: 'stryde', source: `${form.dataset.source}:${form.os?.value || 'unknown'}` }),
         });
-        if (r.ok || r.status === 409) { note.className = 'join-note ok'; note.textContent = 'You’re on the list. We’ll email you once, when Stryde launches.'; form.reset(); btn.textContent = 'You’re in'; return; }
+        if (r.ok || r.status === 409) { if (window.gtag) gtag('event', 'join_waitlist', { os: form.os?.value || 'unknown' }); note.className = 'join-note ok'; note.textContent = 'You’re on the list. We’ll email you once, when Stryde launches.'; form.reset(); btn.textContent = 'You’re in'; return; }
         throw new Error(String(r.status));
       } catch {
         note.className = 'join-note err'; note.textContent = 'Couldn’t add you just now. Try again in a moment, or email support@buenoworks.app.';

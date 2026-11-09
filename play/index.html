@@ -1,7 +1,8 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Get Stryde · Google Play</title><link rel="icon" href="/logo.png">
 <meta name="theme-color" content="#0a0d12">
-<link rel="stylesheet" href="/style.css"></head>
+<link rel="stylesheet" href="/style.css"><script async src="https://www.googletagmanager.com/gtag/js?id=G-XP8HQCZ71S"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XP8HQCZ71S');document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('a[href*="play.google.com"],a[href^="/play"],a[href^="intent:"]');if(a)gtag('event','click_get_app',{link_url:a.href.slice(0,100)})});</script>
+</head>
 <body><div class="wrap"><header class="top"><a class="wordmark" href="/">Stryde <span style="font-weight:500;color:var(--muted);font-size:14px">by Bueno Works</span></a></header>
 <div class="hero"><h1>Opening Google Play…</h1><p>Stryde is out now on Google Play. Tap Install and go run your first loop.</p>
 <a class="play" href="https://play.google.com/store/apps/details?id=io.stepearn.step_earn&amp;referrer=utm_source%3Dinstagram%26utm_medium%3Dbio%26utm_campaign%3Dlaunch"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.2 2.6 13.6 12l-9.4 9.4c-.4-.2-.7-.7-.7-1.3V3.9c0-.6.3-1.1.7-1.3Zm10.7 8.1 2.6-2.6 3.2 1.8c.9.5.9 1.8 0 2.3l-3.2 1.8-2.6-2.6v-.7Zm-.7 1.3 2.4 2.4-11 6.3 8.6-8.7Zm0-1.3L5.6 2.1l11 6.3-2.4 2.6Z"/></svg><span><small>Get it on</small>Google Play</span></a>
@@ -17,6 +18,8 @@
   const web = a.href;
   if (!/Android/i.test(navigator.userAgent)) return;
   a.href = `intent://details?${new URL(web).search.slice(1)}#Intent;scheme=market;package=com.android.vending;S.browser_fallback_url=${encodeURIComponent(web)};end`;
-  location.href = a.href;
+  // Let Analytics log the visit (with its utm tags) before leaving for the Play Store.
+  let gone = false; const go = () => { if (!gone) { gone = true; location.href = a.href; } };
+  if (window.gtag) gtag('event', 'play_redirect', { event_callback: go }); setTimeout(go, 1200);
 })();
 </script></body></html>
