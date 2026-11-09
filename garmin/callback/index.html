@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Garmin Connect · Stryde</title><link rel="icon" href="/logo.png">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0a0d12">
+<link rel="stylesheet" href="/style.css"></head>
+<body><div class="wrap"><header class="top"><a class="wordmark" href="/">Stryde <span style="font-weight:500;color:var(--muted);font-size:14px">by Bueno Works</span></a></header>
+<div class="hero"><h1 id="title">Back to Stryde…</h1><p id="msg">Finishing your Garmin Connect link in the Stryde app.</p>
+<p><a class="play" id="open" href="#"><span>Open Stryde</span></a></p>
+<p style="color:var(--muted);font-size:14px">Nothing happened? Tap Open Stryde. Make sure the Stryde app is installed and up to date on this phone, then try again from <b>Profile → Connected services</b> in the app.</p></div></div>
+<script>
+// Garmin redirects here with ?code=&state= (or ?error=). Hand them to the app as
+// stepearn://garmin-callback?gcode=&gstate= (renamed so the app's sign-in SDK
+// ignores them). No package in the intent, so dev and store builds both open.
+(() => {
+  const q = new URLSearchParams(location.search);
+  const code = q.get('code'), state = q.get('state');
+  const out = new URLSearchParams();
+  if (code && state) { out.set('gcode', code); out.set('gstate', state); }
+  else {
+    out.set('gerror', q.get('error') || 'cancelled');
+    document.getElementById('title').textContent = 'Garmin Connect not linked';
+    document.getElementById('msg').textContent = 'No problem. You can connect any time from Profile → Connected services in Stryde.';
+  }
+  // Keep the one-time code out of the address bar and history.
+  history.replaceState(null, '', location.pathname);
+  const a = document.getElementById('open');
+  a.href = /Android/i.test(navigator.userAgent)
+    ? `intent://garmin-callback?${out}#Intent;scheme=stepearn;end`
+    : `stepearn://garmin-callback?${out}`;
+  location.href = a.href;
+})();
+</script></body></html>
